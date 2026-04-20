@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алматы Аграрлық Университеті</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.45);
+            padding: 24px;
+        }
+
+        .modal-content {
+            background: #f8fafc;
+            margin: 5vh auto;
+            padding: 28px;
+            border-radius: 24px;
+            width: min(100%, 640px);
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+        }
+
+        .close-btn {
+            float: right;
+            border: 0;
+            background: transparent;
+            font-size: 30px;
+            line-height: 1;
+            color: #64748b;
+        }
+
+        .close-btn:hover {
+            color: #0f172a;
+        }
+    </style>
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "block";
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        window.addEventListener("click", function(event) {
+            if (event.target.classList.contains("modal")) {
+                event.target.style.display = "none";
+            }
+        });
+    </script>
+</head>
+<body class="bg-gradient-to-br from-green-50 via-amber-50 to-green-100 text-gray-800">
+    <main class="min-h-screen">
+        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-lg border-b-4 border-green-600">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="text-4xl">🌾</div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-green-700 to-amber-600 bg-clip-text text-transparent">
+                        Алматы Аграрлық Университеті
+                    </h1>
+                </div>
+                <nav class="flex flex-wrap gap-4 text-sm md:text-base font-medium">
+                    <a href="#home" class="hover:text-green-700 transition">Басты бет</a>
+                    <a href="#programs" class="hover:text-green-700 transition">Бағдарламалар</a>
+                    <a href="#courses" class="hover:text-green-700 transition">Курстар</a>
+                    <a href="#faculty" class="hover:text-green-700 transition">Факультеттер</a>
+                    <a href="#about" class="hover:text-green-700 transition">Біз туралы</a>
+                    <a href="#teachers" class="hover:text-green-700 transition">Оқытушылар</a>
+                    <a href="#facilities" class="hover:text-green-700 transition">Құрылымдар</a>
+                    <a href="#contact" class="hover:text-green-700 transition">Байланыс</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="home" class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <p class="uppercase tracking-[6px] text-green-700 font-bold mb-4">Ауыл шаруашылығы білімінің жаңа буыны</p>
+                <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-green-900">
+                    Болашақ агро мамандарға арналған заманауи университет
+                </h2>
+                <p class="text-lg text-gray-700 leading-8 mb-8">
+                    Университет ауыл шаруашылығы, ветеринария, биотехнология, экология және тағам өндірісі салалары бойынша
+                    сапалы білім береді. Теория мен практиканы ұштастыратын оқу жүйесі студенттердің кәсіби дамуына бағытталған.
+                </p>
+
+                <div class="flex gap-4 flex-wrap">
+                    <button onclick="openModal('admissionModal')" class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-2xl shadow-lg transition transform hover:scale-105">
+                        Қабылдауларды білу
+                    </button>
+                    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});" class="bg-white border-2 border-green-600 text-green-700 px-6 py-3 rounded-2xl shadow-sm hover:shadow-md transition">
+                        Толығырақ білу
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-500 via-emerald-500 to-amber-400 rounded-[40px] p-10 text-white shadow-2xl">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/20 rounded-3xl p-5 backdrop-blur-md">
+                        <h3 class="text-3xl font-bold">8</h3>
+                        <p class="text-sm">Факультет</p>
+                    </div>
+                    <div class="bg-white/20 rounded-3xl p-5 backdrop-blur-md">
+                        <h3 class="text-3xl font-bold">3500+</h3>
+                        <p class="text-sm">Студент</p>
+                    </div>
+                    <div class="bg-white/20 rounded-3xl p-5 backdrop-blur-md">
+                        <h3 class="text-3xl font-bold">250+</h3>
+                        <p class="text-sm">Оқытушы</p>
+                    </div>
+                    <div class="bg-white/20 rounded-3xl p-5 backdrop-blur-md">
+                        <h3 class="text-3xl font-bold">98%</h3>
+                        <p class="text-sm">Жұмысқа орналасу</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-green-50 to-amber-50 rounded-[40px] shadow-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-green-900">Біз туралы</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto leading-8">
+                    Алматы Аграрлық Университеті Алматы қаласының орталығында орналасқан, студенттерге ыңғайлы инфрақұрылым ұсынатын жетекші білім ордасы. Университет заманауи оқу ғимараттары, зертханалар, кітапхана және спорт кешендерімен жабдықталған. Біздің мақсатымыз - студенттерге теориялық біліммен қатар практикалық дағдыларды дамыту.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[30px] p-8 shadow-xl hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-800">Орналасқан жері</h3>
+                    <p class="text-gray-700">Алматы қаласының жүрегі - Абай көшесі 8 мекенжайында орналасқан.</p>
+                </div>
+                <div class="bg-white rounded-[30px] p-8 shadow-xl hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-800">Инфрақұрылым</h3>
+                    <p class="text-gray-700">Заманауи аудиториялар, IT зертханалар және студенттерге арналған жайлы жатақхана.</p>
+                </div>
+                <div class="bg-white rounded-[30px] p-8 shadow-xl hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-800">Миссия</h3>
+                    <p class="text-gray-700">Ауыл шаруашылығы саласында білікті мамандар даярлау және инновациялық зерттеулер жүргізу.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="campus" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-blue-900">Кампус өмірі</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Алматы қаласындағы кампус қаланың орталығына жақын орналасқан, студенттерге барлық қажетті жағдайлар жасалған.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-green-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-700">Кампус</h3>
+                    <p class="text-gray-600 leading-7">Алматы қаласындағы заманауи кампус, қаланың орталығына жақын орналасқан.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-amber-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏠</div>
+                    <h3 class="text-2xl font-bold mb-3 text-amber-700">Жатақхана</h3>
+                    <p class="text-gray-600 leading-7">Ыңғайлы және қауіпсіз жатақхана, студенттердің тұрмыстық қажеттіліктерін қамтамасыз етеді.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-blue-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">Кітапхана</h3>
+                    <p class="text-gray-600 leading-7">500 мыңнан астам кітап және электронды ресурстармен жабдықталған кітапхана.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-red-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-700">Асхана</h3>
+                    <p class="text-gray-600 leading-7">Дәмді және пайдалы тамақ ұсынатын асхана, студенттердің тамақтануын қамтамасыз етеді.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-purple-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏐</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Спорт кешені</h3>
+                    <p class="text-gray-600 leading-7">Бассейн, гимнастика залы, ойын алаңдары және фитнес-орталығы бар спорт кешені.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-cyan-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-cyan-700">IT зертханалары</h3>
+                    <p class="text-gray-600 leading-7">Заманауи компьютерлер және бағдарламалық қамтамасыз етумен жабдықталған IT зертханалары.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-green-900">Негізгі бағдарламалар</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Аграрлық саланың сұранысқа ие бағыттары бойынша бакалавриат және кәсіби дайындық бағдарламалары.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-green-500">
+                    <div class="text-5xl mb-4">🌾</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-700">Ауыл шаруашылығы</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Агрономия, топырақтану, егіншілік және заманауи агротехнологиялар.</p>
+                    <button onclick="openModal('agricultureModal')" class="bg-green-600 text-white px-5 py-2 rounded-xl hover:bg-green-700 transition">Көру</button>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-amber-500">
+                    <div class="text-5xl mb-4">🐄</div>
+                    <h3 class="text-2xl font-bold mb-3 text-amber-700">Жануарлар өндірісі</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Мал шаруашылығы, сүт пен ет өндірісі, азықтандыру және басқару.</p>
+                    <button onclick="openModal('animalModal')" class="bg-amber-600 text-white px-5 py-2 rounded-xl hover:bg-amber-700 transition">Көру</button>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-emerald-500">
+                    <div class="text-5xl mb-4">🧬</div>
+                    <h3 class="text-2xl font-bold mb-3 text-emerald-700">Биотехнология</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Генетика, микробиология және зертханалық биоинженерия негіздері.</p>
+                    <button onclick="openModal('biotechModal')" class="bg-emerald-600 text-white px-5 py-2 rounded-xl hover:bg-emerald-700 transition">Көру</button>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-red-500">
+                    <div class="text-5xl mb-4">🩺</div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-700">Ветеринария</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Жануарлар денсаулығы, диагностика, профилактика және емдеу.</p>
+                    <button onclick="openModal('vetModal')" class="bg-red-600 text-white px-5 py-2 rounded-xl hover:bg-red-700 transition">Көру</button>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">Экология және қоршаған орта</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Табиғи ресурстар, климат, экожүйелер және тұрақты даму.</p>
+                    <button onclick="openModal('ecoModal')" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">Көру</button>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-purple-500">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Өндірістік технология</h3>
+                    <p class="text-gray-600 mb-5 leading-7">Тағам өндірісі, сапаны бақылау және қауіпсіздік стандарттары.</p>
+                    <button onclick="openModal('foodTechModal')" class="bg-purple-600 text-white px-5 py-2 rounded-xl hover:bg-purple-700 transition">Көру</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-blue-900">IT курстары</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Бағдарламалау және веб-технологиялар бойынша қосымша курстар.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">C++ бағдарламалау</h3>
+                    <p class="text-gray-600 leading-7">C++ — жоғары деңгейлі бағдарламалау тілі. Бұл курс арқылы студенттер айнымалылар, циклдер, функциялар, массивтер, объектіге бағытталған бағдарламалау және алгоритмдермен жұмыс істеуді үйренеді. Курс практикалық тапсырмалар мен жобаларға негізделген.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-green-500">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-700">Visual Studio Code</h3>
+                    <p class="text-gray-600 leading-7">Visual Studio Code — бағдарламалаушылар арасында ең танымал код редакторларының бірі. Бұл бөлімде студенттер VS Code орнату, кеңейтімдер қолдану, GitHub-пен жұмыс істеу, терминал пайдалану және кодты ыңғайлы жазу әдістерін үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-orange-500">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-3 text-orange-700">HTML және CSS</h3>
+                    <p class="text-gray-600 leading-7">HTML және CSS веб-сайт жасаудың негізі болып табылады. HTML арқылы сайттың құрылымы жасалады, ал CSS арқылы дизайн беріледі. Бұл курс арқылы студенттер responsive дизайн, flexbox, grid, animation және modern UI элементтерін үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-yellow-500">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-700">JavaScript</h3>
+                    <p class="text-gray-600 leading-7">JavaScript — веб-сайттарға интерактивтілік қосатын негізгі тіл. Бұл бөлімде студенттер DOM, event, function, array, object, API және асинхронды бағдарламалау негіздерін меңгереді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-purple-500">
+                    <div class="text-5xl mb-4">⚛️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">React және Frontend Development</h3>
+                    <p class="text-gray-600 leading-7">React — қазіргі таңда ең танымал frontend кітапханаларының бірі. Бұл курста компоненттер, props, state, hooks, routing және API-мен жұмыс істеу үйретіледі. Студенттер толыққанды веб-қосымша жасауды үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-pink-500">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="text-2xl font-bold mb-3 text-pink-700">Web Design және UI/UX</h3>
+                    <p class="text-gray-600 leading-7">Web Design және UI/UX бағыты веб-сайттың әдемі әрі ыңғайлы болуына жауап береді. Бұл бөлімде түстерді таңдау, typography, layout, spacing, user experience және Figma қолдану үйретіледі.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-teal-500">
+                    <div class="text-5xl mb-4">🐍</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">Python негіздері</h3>
+                    <p class="text-gray-600 leading-7">Python — үйренуге оңай әрі өте танымал бағдарламалау тілі. Бұл курс арқылы студенттер синтаксис, циклдер, функциялар, файлдармен жұмыс, деректерді өңдеу және қарапайым жасанды интеллект жобаларын жасауды үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-indigo-500">
+                    <div class="text-5xl mb-4">🗄️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">MySQL және деректер қоры</h3>
+                    <p class="text-gray-600 leading-7">MySQL — деректер қорын басқаруға арналған жүйе. Бұл бөлімде студенттер database құру, table жасау, SQL сұраныстары, JOIN, WHERE, ORDER BY және деректерді сақтау тәсілдерін үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-red-500">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-700">Киберқауіпсіздік</h3>
+                    <p class="text-gray-600 leading-7">Киберқауіпсіздік курсы ақпаратты қорғау, желі қауіпсіздігі, пароль қауіпсіздігі, вирустардан қорғану және хакерлік шабуылдардың алдын алу тақырыптарын қамтиды.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-cyan-500">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold mb-3 text-cyan-700">Мобильді қосымша жасау</h3>
+                    <p class="text-gray-600 leading-7">Бұл бөлімде студенттер мобильді қосымшалардың интерфейсін жасау, Android және iOS платформаларына арналған дизайн, Flutter немесе React Native қолдану негіздерін үйренеді.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-lime-500">
+                    <div class="text-5xl mb-4">🚜</div>
+                    <h3 class="text-2xl font-bold mb-3 text-lime-700">Smart Farming технологиялары</h3>
+                    <p class="text-gray-600 leading-7">Smart Farming — ауыл шаруашылығында жаңа технологияларды пайдалану бағыты. Бұл бөлімде сенсорлар, дрондар, автоматтандырылған суару жүйелері және деректерді талдау қарастырылады.</p>
+                </div>
+
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-gray-500">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-700">Ауыл шаруашылығындағы жасанды интеллект</h3>
+                    <p class="text-gray-600 leading-7">Жасанды интеллект ауыл шаруашылығында өнімділікті арттыруға көмектеседі. Бұл бөлімде AI арқылы егін жағдайын бақылау, ауа райын болжау, мал шаруашылығын басқару және автоматтандыру жүйелері туралы айтылады.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faculty" class="bg-gradient-to-r from-green-100 to-emerald-100 py-16 mt-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4 text-green-900">Факультеттер</h2>
+                    <p class="text-gray-700">Университет құрамындағы негізгі білім беру бөлімдері.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Ауыл шаруашылығы</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Жануарлар өндірісі</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Ветеринария</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Аграрлық инженерия</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Экономика</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Биотехнология</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Орман және экология</div>
+                    <div class="bg-white rounded-[24px] shadow-lg p-6 text-center">Білім беру</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-white py-16 mt-10">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-green-400 to-emerald-500 rounded-[40px] p-8 text-white shadow-2xl h-96 flex flex-col justify-center">
+                    <div class="text-6xl mb-4">🌿</div>
+                    <h3 class="text-3xl font-bold mb-3">75 жылдық тарих</h3>
+                    <p class="text-lg">Университет аграрлық білім беру саласында көпжылдық тәжірибеге ие және үздіксіз дамып келеді.</p>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-green-900">Біз туралы</h2>
+                    <p class="text-gray-700 leading-8 mb-4">
+                        Алматы Аграрлық Университеті заманауи зертханалар, тәжірибелік алаңдар және мықты профессорлық құрам арқылы
+                        студенттерге сапалы білім береді.
+                    </p>
+                    <p class="text-gray-700 leading-8 mb-4">
+                        Білім беру бағдарламалары ауыл шаруашылығы саласындағы нақты сұраныстарға бағытталған және жұмысқа орналасуға көмектеседі.
+                    </p>
+                    <p class="text-gray-700 leading-8">
+                        Университет ғылыми зерттеу, инновация және өндірістік тәжірибені қатар дамытады.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="teachers" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-green-900">Құрметті оқытушылар</h2>
+                <p class="text-gray-700">Тәжірибелі мамандар мен зерттеушілер құрамы.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center">
+                    <div class="text-4xl mb-4">👨‍🌾</div>
+                    <h3 class="text-2xl font-bold text-green-800">Бекзат Асқарұлы</h3>
+                    <p class="text-gray-600 mt-3">Агрономия және топырақ ғылымы бойынша тәжірибелі оқытушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center">
+                    <div class="text-4xl mb-4">👩‍🔬</div>
+                    <h3 class="text-2xl font-bold text-amber-800">Алмаш Мұсақымова</h3>
+                    <p class="text-gray-600 mt-3">Жануарлар өндірісі және тағам сапасы бағытындағы маман.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center">
+                    <div class="text-4xl mb-4">👨‍⚕️</div>
+                    <h3 class="text-2xl font-bold text-red-800">Қайрат Иманов</h3>
+                    <p class="text-gray-600 mt-3">Ветеринариялық диагностика және клиникалық тәжірибе бойынша оқытушы.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-[40px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-orange-900">Студенттердің жетістіктері</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Біздің студенттердің олимпиадалардағы, жарыстардағы және инновациялық жобалардағы табыстары.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold mb-3 text-orange-800">Олимпиада жеңімпаздары</h3>
+                    <p class="text-gray-600 mb-2"><strong>Айгүл Нұрланова</strong></p>
+                    <p class="text-gray-600">Халықаралық агрономия олимпиадасында 1-орын алды. Топырақтану бойынша зерттеулерімен танымал.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-800">Грант иегерлері</h3>
+                    <p class="text-gray-600 mb-2"><strong>Данияр Қасымов</strong></p>
+                    <p class="text-gray-600">Болашақ бағдарламасының грантын жеңіп алды. Биотехнология саласындағы жобалары үшін.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-800">Стартап жасаған студенттер</h3>
+                    <p class="text-gray-600 mb-2"><strong>Мадияр Әлібеков</strong></p>
+                    <p class="text-gray-600">Smart Farming технологияларына арналған стартап құрды. Қазір 50+ фермермен жұмыс істейді.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-800">Халықаралық жарыстарға қатысқан студенттер</h3>
+                    <p class="text-gray-600 mb-2"><strong>Сара Қожанова</strong></p>
+                    <p class="text-gray-600">Еуропа чемпионатында ветеринария бойынша жүлде алды. Қазір халықаралық конференцияларда баяндама жасайды.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="itnews" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-blue-900">IT жаңалықтары</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Бағдарламалау және технологиялар саласындағы соңғы трендтер мен жаңалықтар.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-blue-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">Жасанды интеллект</h3>
+                    <p class="text-gray-600 leading-7">AI технологияларының дамуы және ауыл шаруашылығындағы қолдану мүмкіндіктері.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-green-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-700">Робототехника</h3>
+                    <p class="text-gray-600 leading-7">Роботтардың өндірісте және ауыл шаруашылығындағы рөлі мен болашағы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-purple-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Бағдарламалау тілдері</h3>
+                    <p class="text-gray-600 leading-7">Python, JavaScript, C++ және басқа тілдердің трендтері мен қолдану аясы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-red-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-700">Киберқауіпсіздік</h3>
+                    <p class="text-gray-600 leading-7">Ақпаратты қорғау, желі қауіпсіздігі және хакерлік шабуылдардың алдын алу.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 border-t-4 border-orange-500 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-3 text-orange-700">Web Development трендтері</h3>
+                    <p class="text-gray-600 leading-7">React, Vue, Angular және басқа фреймворктардың дамуы.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-[40px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-indigo-900">Сертификаттар</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Курсты аяқтағаннан кейін студенттерге сертификат беріледі. Сертификаттар халықаралық стандарттарға сәйкес келеді.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">⚛️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700">React Developer Certificate</h3>
+                    <p class="text-gray-600">Frontend development бойынша толық курсты аяқтаған студенттерге беріледі.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-green-700">C++ Programming Certificate</h3>
+                    <p class="text-gray-600">C++ бағдарламалау тілі бойынша біліктілік сертификаты.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="text-2xl font-bold mb-3 text-pink-700">Web Design Certificate</h3>
+                    <p class="text-gray-600">UI/UX дизайн және веб-дизайн бойынша сертификат.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-3 text-red-700">Cyber Security Certificate</h3>
+                    <p class="text-gray-600">Киберқауіпсіздік негіздері бойынша біліктілік куәлігі.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="max-w-4xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">FAQ</h2>
+                <p class="text-gray-700">Жиі қойылатын сұрақтарға жауаптар</p>
+            </div>
+            <div class="space-y-4">
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Бұл курстар кімдерге арналған?</summary>
+                    <p class="text-gray-700 mt-4">Бұл курстар студенттерге, жұмыс істейтін мамандарға және IT саласына қызығушылық танытатын барлық адамдарға арналған.</p>
+                </details>
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Онлайн оқу мүмкіндігі бар ма?</summary>
+                    <p class="text-gray-700 mt-4">Иә, барлық курстар онлайн форматта қолжетімді, сондай-ақ гибридті оқу мүмкіндігі бар.</p>
+                </details>
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Сертификат беріле ме?</summary>
+                    <p class="text-gray-700 mt-4">Иә, курсты сәтті аяқтаған студенттерге сертификат беріледі.</p>
+                </details>
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Қандай бағдарламалау тілдері оқытылады?</summary>
+                    <p class="text-gray-700 mt-4">Python, JavaScript, C++, SQL, HTML/CSS, React, TypeScript, PHP сияқты тілдер оқытылады.</p>
+                </details>
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Грантқа түсу мүмкін бе?</summary>
+                    <p class="text-gray-700 mt-4">Иә, үздік студенттерге гранттар мен жеңілдіктер ұсынылады.</p>
+                </details>
+                <details class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+                    <summary class="text-xl font-bold text-green-800 cursor-pointer">Қабылдау шарттары қандай?</summary>
+                    <p class="text-gray-700 mt-4">Қабылдау үшін жеке куәлік, аттестат, ҰБТ сертификаты және фото қажет. Толық ақпарат қабылдау бөлімінде.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="reviews" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-pink-50 to-red-50 rounded-[40px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-pink-900">Студенттердің пікірлері</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Біздің курстарды аяқтаған студенттердің пікірлері мен тәжірибелері.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center hover:shadow-2xl transition">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white">👤</div>
+                    <h3 class="text-xl font-bold text-gray-800">Айгүл Сәдуақасова</h3>
+                    <p class="text-blue-600 mb-3">Frontend Developer</p>
+                    <p class="text-gray-600 italic">"Маған бұл университеттің Web Design және React курстары қатты ұнады. Практикалық жобалар өте пайдалы болды."</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center hover:shadow-2xl transition">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white">👤</div>
+                    <h3 class="text-xl font-bold text-gray-800">Бекзат Нұрғалиев</h3>
+                    <p class="text-green-600 mb-3">Python Developer</p>
+                    <p class="text-gray-600 italic">"C++ және Python сабақтары өте түсінікті өтті. Оқытушылардың тәжірибесі жоғары."</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-8 text-center hover:shadow-2xl transition">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-white">👤</div>
+                    <h3 class="text-xl font-bold text-gray-800">Мадина Қалиева</h3>
+                    <p class="text-purple-600 mb-3">UI/UX Designer</p>
+                    <p class="text-gray-600 italic">"Visual Studio Code бойынша бөлім өте пайдалы болды. Енді мен кәсіби дизайнермін."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admission" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-green-900">Қабылдау процесі</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Университетке түсу үшін қажетті құжаттар мен қадамдар.
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-green-800">Қажетті құжаттар</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <div class="text-green-600 text-xl">✓</div>
+                            <div>
+                                <p class="font-semibold">Жеке куәлік</p>
+                                <p class="text-gray-600">Жеке басын куәландыратын құжат</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="text-green-600 text-xl">✓</div>
+                            <div>
+                                <p class="font-semibold">Аттестат</p>
+                                <p class="text-gray-600">Орта білім туралы құжат</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="text-green-600 text-xl">✓</div>
+                            <div>
+                                <p class="font-semibold">ҰБТ сертификаты</p>
+                                <p class="text-gray-600">Бірыңғай ұлттық тестілеу нәтижелері</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="text-green-600 text-xl">✓</div>
+                            <div>
+                                <p class="font-semibold">Фото</p>
+                                <p class="text-gray-600">3x4 өлшеміндегі түрлі-түсті фото</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-green-800">Қабылдау қадамдары</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <p class="font-semibold">Өтініш беру</p>
+                                <p class="text-gray-600">Онлайн немесе қабылдау комиссиясы арқылы құжаттарды тапсыру</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <p class="font-semibold">Құжаттарды тексеру</p>
+                                <p class="text-gray-600">Құжаттардың толықтығын және дұрыстығын тексеру</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <p class="font-semibold">Сұхбат</p>
+                                <p class="text-gray-600">Қажет болған жағдайда сұхбат жүргізу</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
+                            <div>
+                                <p class="font-semibold">Қабылдау шешімі</p>
+                                <p class="text-gray-600">Қабылдау комиссиясының шешімі</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="gallery" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-gray-50 to-blue-50 rounded-[40px]">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">Галерея</h2>
+        <p class="text-gray-700">Университет өмірінің фотолары</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/auditoriya.jpg" alt="Университет аудиториялары" class="w-full h-full object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/laboratory.jpg" alt="IT зертханалары" class="w-full h-full object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/students.jpg" alt="Студенттер" class="w-full h-full object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/library.jpg" alt="Кітапхана" class="w-full h-full object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/campus.jpg" alt="Кампус" class="w-full h-full object-cover">
+        </div>
+
+        <div class="overflow-hidden rounded-[20px] h-48 hover:shadow-lg transition">
+            <img src="./media/computer-class.jpg" alt="Компьютерлік сыныптар" class="w-full h-full object-cover">
+        </div>
+    </div>
+</section>
+
+<section id="videos" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-red-900">Видеолар</h2>
+        <p class="text-gray-700">Оқу материалдары мен университет туралы видеолар</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+<div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+    <div class="rounded-[10px] overflow-hidden mb-4 h-48">
+        <video controls class="w-full h-full object-cover rounded-[10px]">
+            <source src="./media/agrovideo.mp4" type="video/mp4">
+            Сіздің браузеріңіз видеоны қолдамайды.
+        </video>
+    </div>
+    <h3 class="text-xl font-bold mb-2 text-red-800">Университет туралы</h3>
+    <p class="text-gray-600">Университеттің тарихы, миссиясы және жетістіктері туралы толық ақпарат.</p>
+</div>
+
+        <div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+            <div class="rounded-[10px] overflow-hidden mb-4">
+                <iframe 
+                    class="w-full h-48"
+                    src="https://www.youtube.com/embed/ZzaPdXTrSb8"
+                    title="C++ сабағы"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-red-800">C++ сабағы</h3>
+            <p class="text-gray-600">C++ бағдарламалау тілінің негіздері бойынша практикалық сабақ.</p>
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+            <div class="rounded-[10px] overflow-hidden mb-4">
+                <iframe 
+                    class="w-full h-48"
+                    src="https://www.youtube.com/embed/WPqXP_kLzpo"
+                    title="Visual Studio Code қолдану"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-red-800">Visual Studio Code қолдану</h3>
+            <p class="text-gray-600">VS Code редакторының мүмкіндіктері мен жұмыс істеу әдістері.</p>
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+            <div class="rounded-[10px] overflow-hidden mb-4">
+                <iframe 
+                    class="w-full h-48"
+                    src="https://www.youtube.com/embed/qz0aGYrrlhU"
+                    title="HTML/CSS үйрену"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-red-800">HTML/CSS үйрену</h3>
+            <p class="text-gray-600">Веб-сайт жасаудың негізі - HTML және CSS тілдері.</p>
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+            <div class="rounded-[10px] overflow-hidden mb-4">
+                <iframe 
+                    class="w-full h-48"
+                    src="https://www.youtube.com/embed/bMknfKXIFA8"
+                    title="React жобалары"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-red-800">React жобалары</h3>
+            <p class="text-gray-600">React фреймворкімен веб-қосымшалар жасау мысалдары.</p>
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-lg p-6 hover:shadow-xl transition">
+            <div class="rounded-[10px] overflow-hidden mb-4">
+                <iframe 
+                    class="w-full h-48"
+                    src="https://www.youtube.com/embed/inWWhr5tnEA"
+                    title="Cyber Security негіздері"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-red-800">Cyber Security негіздері</h3>
+            <p class="text-gray-600">Ақпаратты қорғау және киберқауіпсіздік бойынша негізгі ұғымдар.</p>
+        </div>
+
+    </div>
+</section>
+
+        <section id="languages" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-[40px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-teal-900">Бағдарламалау тілдері</h2>
+                <p class="text-gray-700">Біздің курстарда оқытылатын бағдарламалау тілдері</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">C++</h3>
+                    <p class="text-gray-600">Жоғары өнімділікті қажет ететін жүйелер үшін қолданылатын тіл.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🐍</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">Python</h3>
+                    <p class="text-gray-600">Оңай үйрену және көп салалы қолдану мүмкіндігі бар тіл.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">JavaScript</h3>
+                    <p class="text-gray-600">Веб-қосымшалардың интерактивтілігін қамтамасыз ететін тіл.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🗄️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">SQL</h3>
+                    <p class="text-gray-600">Деректер қорын басқаруға арналған сұраныс тілі.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">HTML/CSS</h3>
+                    <p class="text-gray-600">Веб-сайттардың құрылымы мен дизайнын жасауға арналған тілдер.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">⚛️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">React</h3>
+                    <p class="text-gray-600">Заманауи веб-интерфейстер жасауға арналған кітапхана.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🔷</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">TypeScript</h3>
+                    <p class="text-gray-600">JavaScript-тің типтелген нұсқасы, үлкен жобалар үшін ыңғайлы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🐘</div>
+                    <h3 class="text-2xl font-bold mb-3 text-teal-700">PHP</h3>
+                    <p class="text-gray-600">Серверлік веб-қосымшалар жасауға арналған тіл.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-indigo-900">Болашақ мамандықтар</h2>
+                <p class="text-gray-700">Біздің курстарды аяқтағаннан кейін алуға болатын мамандықтар</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Frontend Developer</h3>
+                    <p class="text-gray-600">Веб-сайттардың пайдаланушы интерфейсін жасаушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Backend Developer</h3>
+                    <p class="text-gray-600">Серверлік қосымшалар мен деректер қорын басқарушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">UI/UX Designer</h3>
+                    <p class="text-gray-600">Пайдаланушы интерфейсін және тәжірибесін жобалаушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Data Analyst</h3>
+                    <p class="text-gray-600">Деректерді талдап, түсініктер шығарушы маман.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Cyber Security Specialist</h3>
+                    <p class="text-gray-600">Ақпаратты қорғау және қауіпсіздікті қамтамасыз етуші.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Mobile Developer</h3>
+                    <p class="text-gray-600">Мобильді қосымшалар жасаушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Full Stack Developer</h3>
+                    <p class="text-gray-600">Frontend және backend қосымшаларын толық жасаушы.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 text-center hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">DevOps Engineer</h3>
+                    <p class="text-gray-600">Қосымшалардың даму және жұмыс істеу процесін басқарушы.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-purple-50 to-pink-50 rounded-[40px]">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-purple-900">Практикалық жобалар</h2>
+                <p class="text-gray-700">Студенттердің курстар барысында жасайтын жобалар</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌤️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Ауа райы сайты</h3>
+                    <p class="text-gray-600">API арқылы ауа райын көрсететін интерактивті веб-сайт.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🚜</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Ферма басқару жүйесі</h3>
+                    <p class="text-gray-600">Ауыл шаруашылығы фермадағы процестерді басқаруға арналған қосымша.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Онлайн кітапхана</h3>
+                    <p class="text-gray-600">Кітаптарды іздеу және оқуға арналған веб-платформа.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Университет порталы</h3>
+                    <p class="text-gray-600">Студенттер мен оқытушылар үшін ақпараттық портал.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Студенттерге арналған мобильді қосымша</h3>
+                    <p class="text-gray-600">Расписание, бағалар және университет жаңалықтары үшін қосымша.</p>
+                </div>
+                <div class="bg-white rounded-[32px] shadow-xl p-7 hover:shadow-2xl transition">
+                    <div class="text-5xl mb-4">🌱</div>
+                    <h3 class="text-2xl font-bold mb-3 text-purple-700">Smart Greenhouse жүйесі</h3>
+                    <p class="text-gray-600">Жылыжайдағы температура мен ылғалдылықты бақылайтын жүйе.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-green-900">Материалдық база</h2>
+                <p class="text-gray-700">Оқу мен зерттеуге арналған негізгі инфрақұрылым.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-[28px] p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 text-green-800">Зерттеу фермалары</h3>
+                    <p class="text-gray-700">Практикалық сабақтар мен өндірістік тәжірибеге арналған алаңдар.</p>
+                </div>
+                <div class="bg-gradient-to-br from-amber-100 to-amber-200 rounded-[28px] p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 text-amber-800">Лабораториялар</h3>
+                    <p class="text-gray-700">Микробиология, генетика, экология және азық сапасы зертханалары.</p>
+                </div>
+                <div class="bg-gradient-to-br from-red-100 to-red-200 rounded-[28px] p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 text-red-800">Ветеринарлық клиника</h3>
+                    <p class="text-gray-700">Клиникалық тәжірибе және диагностикалық жұмысқа арналған база.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gradient-to-r from-green-800 to-emerald-800 text-white py-16 mt-10">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Байланыс</h2>
+                    <p class="text-green-100 mb-6 leading-8">
+                        Қабылдау, бағдарлама таңдау немесе университет туралы сұрақтарыңыз болса, бізбен байланыса аласыз.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold">Мекенжай</p>
+                            <p class="text-green-100">Алматы қаласы, Абай көшесі 8</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Телефон</p>
+                            <p class="text-green-100">+7 (727) 391-95-50</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Email</p>
+                            <p class="text-green-100">info@agrouniversity.kz</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Жұмыс уақыты</p>
+                            <p class="text-green-100">Дүйсенбі – Жұма, 09:00 – 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[30px] p-8 text-gray-800 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-5 text-green-800">Өтінім жіберу</h3>
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Аты-жөніңіз" class="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-green-500 transition">
+                        <input type="email" placeholder="Email" class="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-green-500 transition">
+                        <input type="tel" placeholder="Телефон" class="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-green-500 transition">
+                        <textarea placeholder="Сұрағыңыз..." rows="4" class="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-green-500 transition"></textarea>
+                        <button class="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 rounded-2xl font-semibold transition transform hover:scale-105">
+                            Жіберу
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white rounded-[30px] p-8 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-5 text-green-800 text-center">Карта</h3>
+                <div class="bg-gray-200 rounded-2xl h-64 flex items-center justify-center">
+                    <p class="text-gray-500">Google Maps placeholder - Алматы қаласы, Абай көшесі 8</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="admissionModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('admissionModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-green-900 mb-4">Қабылдау туралы ақпарат</h3>
+                <p class="text-gray-700 leading-8 mb-4">
+                    Қабылдау науқаны барысында талапкерлер құжаттарын онлайн немесе қабылдау комиссиясы арқылы тапсыра алады.
+                </p>
+                <p class="text-gray-700 leading-8 mb-4">
+                    Негізгі құжаттар: жеке куәлік, аттестат немесе диплом, тест нәтижелері, 3x4 фото және байланыс ақпараты.
+                </p>
+                <p class="text-gray-700 leading-8">
+                    Бағдарламаға байланысты нақты талаптарды байланыс бөліміндегі email мен телефон арқылы нақтылауға болады.
+                </p>
+            </div>
+        </div>
+
+        <div id="agricultureModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('agricultureModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-green-900 mb-4">Ауыл шаруашылығы</h3>
+                <p class="text-gray-700 leading-8">Бағдарлама агрономия, топырақтану, өсімдік өсіру және заманауи егіншілік технологияларын қамтиды.</p>
+            </div>
+        </div>
+
+        <div id="animalModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('animalModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-amber-800 mb-4">Жануарлар өндірісі</h3>
+                <p class="text-gray-700 leading-8">Мал шаруашылығы, азықтандыру, өнім өндіру және ферма менеджменті бойынша дайындық беріледі.</p>
+            </div>
+        </div>
+
+        <div id="biotechModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('biotechModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-emerald-800 mb-4">Биотехнология</h3>
+                <p class="text-gray-700 leading-8">Генетика, микробиология, зертханалық талдау және биоинженерия бағыттары қамтылады.</p>
+            </div>
+        </div>
+
+        <div id="vetModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('vetModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-red-800 mb-4">Ветеринария</h3>
+                <p class="text-gray-700 leading-8">Жануарларды тексеру, емдеу, алдын алу және клиникалық тәжірибе бойынша білім беріледі.</p>
+            </div>
+        </div>
+
+        <div id="ecoModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('ecoModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-blue-800 mb-4">Экология және қоршаған орта</h3>
+                <p class="text-gray-700 leading-8">Қоршаған ортаны қорғау, ресурстарды басқару және тұрақты даму мәселелері оқытылады.</p>
+            </div>
+        </div>
+
+        <div id="foodTechModal" class="modal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" onclick="closeModal('foodTechModal')">&times;</button>
+                <h3 class="text-3xl font-bold text-purple-800 mb-4">Өндірістік технология</h3>
+                <p class="text-gray-700 leading-8">Тағам өнімдерін өндіру, сақтау, сапаны бақылау және қауіпсіздік стандарттары қарастырылады.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-green-800 to-emerald-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-green-100">Алматы қаласы, Абай көшесі 8</p>
+            </div>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="text-2xl hover:text-green-300 transition">📷 Instagram</a>
+                <a href="#" class="text-2xl hover:text-green-300 transition">✈️ Telegram</a>
+                <a href="#" class="text-2xl hover:text-green-300 transition">📺 YouTube</a>
+                <a href="#" class="text-2xl hover:text-green-300 transition">📘 Facebook</a>
+            </div>
+            <p class="text-green-100">© 2026 Алматы Аграрлық Университеті. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
